@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+             xmlns:viewModels="clr-namespace:LoginandSignUpUI.ViewModels"
+             x:Class="LoginandSignUpUI.Views.CreateAccountPage"
+             Title="CreateAccountPage">
+    <ContentPage.BindingContext>
+            <viewModels:DataFormViewModel/>
+    </ContentPage.BindingContext>
+
+    <!-- Main layout-->
+    <Grid ColumnDefinitions="*,*"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*,*" RowSpacing="10" Padding="30">
+        <!-- Title & description-->
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Create Account" FontSize="24"/>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Connect with your friends today" TextColor="#9799a8"/>
+        <!-- Personal information form-->
+        <dataForm:SfDataForm Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="-20,0,0,0" 
+                    DataObject="{Binding UserInfo}">
+                <dataForm:SfDataForm.DefaultLayoutSettings>
+                    <dataForm:DataFormDefaultLayoutSettings
+                        LabelPosition="Top"/>
+                </dataForm:SfDataForm.DefaultLayoutSettings>
+        </dataForm:SfDataForm>
+        <!-- Agreement conditions-->
+        <CheckBox Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" HeightRequest="50" />
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="I agree to the terms and conditions"/>
+        <!-- Sign Up Button-->
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="Sign Up" VerticalOptions="End" FontSize="14" HeightRequest="50"
+                Margin="0,30" BackgroundColor="#04766f" TextColor="White" CornerRadius="10"/>
+        <!-- Separator * sign up text-->
+        <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Silver"/>
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White" Padding="25,0" HorizontalOptions="Center" Text="Or Sign Up With"/>
+        <!-- Facebook and google buttons-->
+        <Button Grid.Row="6" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="End" ImageSource="facebookicon" BackgroundColor="Transparent" Text="Facebook" BorderWidth="1" TextColor="Black" BorderColor="Silver" CornerRadius="8" Margin="0,0,8,0"/>
+        <Button Grid.Row="6" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="End" ImageSource="googleicon" BackgroundColor="Transparent" Text="Google" BorderWidth="1" TextColor="Black" BorderColor="Silver" CornerRadius="8" Margin="8,0,0,0"/>
+        <!-- Account registration-->
+        <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an account? " TextColor="#9799a8"/>
+                        <Span Text="Login" FontAttributes="Bold" TextColor="#04766f"/>
+                    </FormattedString> 
+                </Label.FormattedText>
+        </Label>
+    </Grid> 
+</ContentPage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginandSignUpUI.Views.JoinPage"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="False"
+             NavigationPage.HasNavigationBar="false"  
+             Title="JoinPage"> 
+
+        <!-- Main layout-->
+        <Grid RowDefinitions="Auto,Auto,Auto,*,*,*" Padding="45">
+            <!-- Adding the gradient-->
+            <Grid.Background> 
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#38b48d"
+                                      Offset="0.1" />
+                        <GradientStop Color="#04766f"
+                                      Offset="1.0" />
+                    </LinearGradientBrush>
+             </Grid.Background> 
+
+            <!-- Rounded images-->
+            <Border Grid.Row="0"
+                    BackgroundColor="#ffdddf"
+                    HorizontalOptions="Start"
+                    Rotation="-7"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    StrokeShape="RoundRectangle 10,10,10,10">
+                    <Image Source="marie"/>
+            </Border>
+
+            <Border Grid.Row="0"
+                    BackgroundColor="#e5d8b3"
+                    HorizontalOptions="End"
+                    Rotation="10"
+                    Margin="0,-30,80,0"
+                    HeightRequest="90"
+                    WidthRequest="90"
+                    StrokeShape="RoundRectangle 10,10,10,10">
+                    <Image Source="peter"/>
+            </Border>
+ 
+            <Border Grid.Row="1"
+                    BackgroundColor="#e8d4ff"
+                    HorizontalOptions="Start"
+                    Rotation="20"
+                    Margin="-50,50,0,0"
+                    HeightRequest="130"
+                    WidthRequest="130"
+                    StrokeShape="RoundRectangle 10,10,10,10">
+                    <Image Source="jose"/>
+            </Border>
+
+            <Border Grid.Row="1"
+                    BackgroundColor="#ffe7ab"
+                    HorizontalOptions="End"
+                    Rotation="-12"
+                    Margin="0,40,-40,40"
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    StrokeShape="RoundRectangle 10,10,10,10">
+                    <Image Source="lana"/>
+            </Border>
+            <!-- Main title-->
+            <Label Grid.Row="2" Text="Let's get started!"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   Margin="0,20"
+                   FontSize="45"/>
+            <!-- Description-->
+            <Label Grid.Row="3" Text="Connect with each other with chatting or calling. Enjoy safe and private texting. "
+                   TextColor="White"
+                   LineHeight="1.3"
+                   FontSize="15"
+                   FontAttributes="Bold"/>
+            <!-- Join Button -->
+            <Button Grid.Row="4" Text="Join Now" VerticalOptions="End" FontSize="14" HeightRequest="50"
+                    TextColor="#04766f" BackgroundColor="White" CornerRadius="10"
+                    Clicked="Button_Clicked"/>
+            <!-- Login description-->
+            <Label Grid.Row="5" TextColor="White" VerticalOptions="End">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an account?  "/>
+                        <Span Text="Login" FontAttributes="Bold"/>
+                    </FormattedString> 
+                </Label.FormattedText>
+            </Label> 
+        </Grid> 
+
+     
+</ContentPage>
